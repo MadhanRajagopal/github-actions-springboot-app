@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Copy the compiled JAR file from your Maven build
-COPY target/*.jar spring-boot-app.jar
+COPY */target/*.jar spring-boot-app.jar
 
 # Define the entry point for running the application
 ENTRYPOINT ["java", "-jar", "/spring-boot-app.jar"]
