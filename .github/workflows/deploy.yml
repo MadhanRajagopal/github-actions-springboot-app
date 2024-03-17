@@ -15,22 +15,33 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: maven
-          cache-dependency-path: 'sub-project/pom.xml' # optional
           
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Cache local Maven repository
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+          
         
       - name: Build with Maven
         run: mvn clean install
         
-      - name: Run tests
-        run: mvn test
-        
-  # test:
-  #   needs: build
-  #   runs-on: ubuntu-latest
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+     
+    steps:
 
-  #   steps:
-  #     - name: Run tests
-  #       run: mvn test
+    - name: Checkout code
+      uses: actions/checkout@v4
+       
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+          java-version: '17'
+          distribution: 'temurin'
+          
+    - name: Run tests
+      run: mvn test
