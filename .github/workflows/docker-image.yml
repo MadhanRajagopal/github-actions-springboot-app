@@ -31,4 +31,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: madhan23/app:${TIMESTAMP}
+          tags: madhan23/app:${timestamp} 
