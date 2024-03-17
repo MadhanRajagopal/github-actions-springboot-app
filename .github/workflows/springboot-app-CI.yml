@@ -1,4 +1,4 @@
-name: Spring boot App for build and Test
+name: demo-app-cicd
 
 on:
   workflow_dispatch: # Manually triggered event
@@ -26,11 +26,14 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
+        
       - name: Run tests
         run: mvn test
+        
+  # test:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Run tests
+  #       run: mvn test
