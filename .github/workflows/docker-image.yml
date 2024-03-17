@@ -1,4 +1,4 @@
-name: Push Docker Image
+name: Build & Push Docker Image
 
 on:
   workflow_run:
@@ -31,4 +31,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: madhan23/app:latest
+          tags: madhan23/app:$(date +%s)
