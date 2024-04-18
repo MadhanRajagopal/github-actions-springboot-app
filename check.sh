@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Your REST API endpoint
-INPUT="yes"
+input_value=true
 
 
 # Check if the response contains an error message
-if [[INPUT == "yes" ]]; then
+if [ "$input_value" = true ]; then
     echo "API call failed. Error message: $response"
     exit 1  # Exit with a non-zero status code to indicate failure
 else
