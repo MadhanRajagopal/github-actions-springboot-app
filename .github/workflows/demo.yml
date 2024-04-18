@@ -11,11 +11,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      # - name:  env 
-        # env:
-        #  VAL: true
+
       - name: Run script
-        run:  VAL=$INP check.sh
+        run: chmod +x check.sh &&  VAL=$INP ./check.sh
   print:
     runs-on: ubuntu-latest
     needs: run_script
