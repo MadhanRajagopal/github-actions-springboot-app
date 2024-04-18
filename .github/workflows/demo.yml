@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name:  env 
-        env:
-         VAL: true
+      # - name:  env 
+      #   env:
+      #    VAL: true
       - name: Run script
         run: bash check.sh
   print:
