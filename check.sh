@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Your REST API endpoint
-input_value=true
+input_value=${VAL}
 
 
 # Check if the response contains an error message
