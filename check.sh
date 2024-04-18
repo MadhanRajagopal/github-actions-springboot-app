@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Your REST API endpoint
-INPUT={DATA}
+INPUT="yes"
 
 
 # Check if the response contains an error message
