@@ -7,13 +7,13 @@ jobs:
   run_script:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: run script
-      run: bash check.sh
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run script
+        run: bash check.sh
   print:
     runs-on: ubuntu-latest
     # needs: publish
     steps:
-      -name: echo
-       run: echo "::debug::This is a debug message"
+      - name: Echo
+        run: echo "::debug::This is a debug message"
