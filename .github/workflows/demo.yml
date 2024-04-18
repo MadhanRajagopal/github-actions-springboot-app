@@ -3,7 +3,7 @@ name: Check
 on:
   workflow_dispatch:
 env:
- INP: true
+ INP: false
  
 jobs:
   run_script:
