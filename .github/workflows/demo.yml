@@ -13,7 +13,7 @@ jobs:
         run: bash check.sh
   print:
     runs-on: ubuntu-latest
-    needs: publish
+    needs: run_script
     steps:
       - name: Echo
         run: echo "::debug::This is a debug message"
